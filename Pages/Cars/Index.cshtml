@@ -1,0 +1,84 @@
+﻿@page
+@model CarModelInAspNetCoreWebAppWithEntityFrameWorkTest.Pages.Cars.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Producer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].EnginePower)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].EngineType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].NumberOfCylinders)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].DateOfCreating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Availability)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Photo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Car) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnginePower)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EngineType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfCylinders)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfCreating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Availability)
+            </td>
+            <td>
+                <td><img width="400px" height="300px" src="data:image/jpeg;base64,@Convert.ToBase64String(item.Photo)" /></td>
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

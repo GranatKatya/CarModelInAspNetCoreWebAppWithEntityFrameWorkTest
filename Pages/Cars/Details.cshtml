@@ -1,0 +1,73 @@
+﻿@page
+@model CarModelInAspNetCoreWebAppWithEntityFrameWorkTest.Pages.Cars.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Car</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.Producer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.Producer)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.Model)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.Model)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.EnginePower)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.EnginePower)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.EngineType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.EngineType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.NumberOfCylinders)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.NumberOfCylinders)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.Color)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.Color)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.DateOfCreating)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.DateOfCreating)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.Availability)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.Availability)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.Photo)
+        </dt>
+        <dd class="col-sm-10">
+            <td><img src="data:image/jpeg;base64,@Convert.ToBase64String(@Model.Car.Photo)" /></td>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Car?.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
